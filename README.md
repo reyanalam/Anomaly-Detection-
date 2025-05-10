@@ -37,10 +37,11 @@ jupyter notebook
 ### For Django App (located in `src/`)
 > Usage instructions and deployment guide for the Django app will be provided in the upcoming release.
 
----
-
-📄 **Documentation and Reports** is available in the `docs/` folder.  
-
----
+```bash
+pip install -r requirements.txt
+cd Zenqor
+cd src
+python manage.py runserver 
+```
 
 © Zenqor — Pioneering next-gen ML with quantum intelligence.
