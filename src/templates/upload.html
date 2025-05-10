@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Upload File - Zenqor</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .text-gradient {
+      background: linear-gradient(to right, #A15BE4, #000EA3);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .btn-primary {
+      background: linear-gradient(to right, #A15BE4, #000EA3);
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      transition: transform 0.3s ease;
+    }
+    .btn-primary:hover {
+      transform: scale(1.05);
+    }
+    .dataset-tab {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+    }
+    .dataset-tab:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+    .dataset-tab.active {
+      background: linear-gradient(to right, #A15BE4, #000EA3);
+      border-color: transparent;
+    }
+    input[type="radio"] {
+      display: none;
+    }
+  </style>
+</head>
+<body class="bg-black text-white min-h-screen flex items-center justify-center px-4">
+  <div class="w-full max-w-xl bg-white/5 p-10 rounded-xl shadow-xl backdrop-blur-xl text-center">
+    <h2 class="text-4xl font-bold mb-6 text-gradient">Upload Your Dataset</h2>
+    <p class="text-white/70 mb-8">Select the quantum training or inference dataset you want to upload.</p>
+    <form action="{% url 'upload' %}" method="post" enctype="multipart/form-data" class="space-y-6">
+      {% csrf_token %}
+      
+      <!-- Dataset Selection Tabs -->
+      <div class="grid grid-cols-3 gap-2 mb-4">
+        <label class="dataset-tab p-3 rounded-md cursor-pointer">
+          <input type="radio" name="datasetType" value="NSL_KDD">
+          <span>NSL_KDD</span>
+        </label>
+        <label class="dataset-tab p-3 rounded-md cursor-pointer">
+          <input type="radio" name="datasetType" value="IEEE_CIS">
+          <span>IEEE_CIS</span>
+        </label>
+        <label class="dataset-tab p-3 rounded-md cursor-pointer">
+          <input type="radio" name="datasetType" value="SECCOM">
+          <span>Secom</span>
+        </label>
+      </div>
+
+      <input type="file" name="file" id="file" class="w-full p-3 bg-black border border-white/10 rounded-md text-white" required />
+      <div class="text-center">
+        <button type="submit" class="btn-primary w-full">Upload File</button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    // Add active class to selected tab
+    document.querySelectorAll('.dataset-tab').forEach(tab => {
+      tab.addEventListener('click', function() {
+        // Remove active class from all tabs
+        document.querySelectorAll('.dataset-tab').forEach(t => {
+          t.classList.remove('active');
+        });
+        // Add active class to clicked tab
+        this.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>

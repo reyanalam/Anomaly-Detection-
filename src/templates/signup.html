@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up - Zenqor</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .text-gradient {
+      background: linear-gradient(to right, #A15BE4, #000EA3);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .btn-primary {
+      background: linear-gradient(to right, #A15BE4, #000EA3);
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      transition: transform 0.3s ease;
+    }
+    .btn-primary:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body class="bg-black text-white min-h-screen flex items-center justify-center px-4">
+  <div class="w-full max-w-md bg-white/5 p-8 rounded-xl shadow-xl backdrop-blur-xl">
+    <h2 class="text-3xl font-bold text-center mb-6 text-gradient">Create Your Zenqor Account</h2>
+    <form class="space-y-6">
+      <div>
+        <label for="name" class="block text-sm mb-1">Full Name</label>
+        <input type="text" id="name" required class="w-full px-4 py-2 bg-black border border-white/10 rounded-md text-white" placeholder="John Quantum" />
+      </div>
+      <div>
+        <label for="email" class="block text-sm mb-1">Email</label>
+        <input type="email" id="email" required class="w-full px-4 py-2 bg-black border border-white/10 rounded-md text-white" placeholder="your@email.com" />
+      </div>
+      <div>
+        <label for="password" class="block text-sm mb-1">Password</label>
+        <input type="password" id="password" required class="w-full px-4 py-2 bg-black border border-white/10 rounded-md text-white" placeholder="••••••••" />
+      </div>
+      <div>
+        <label for="confirm" class="block text-sm mb-1">Confirm Password</label>
+        <input type="password" id="confirm" required class="w-full px-4 py-2 bg-black border border-white/10 rounded-md text-white" placeholder="••••••••" />
+      </div>
+      <button type="submit" class="btn-primary w-full text-center">Create Account</button>
+    </form>
+    <p class="text-sm text-center mt-4 text-white/60">Already have an account? <a href="#" class="text-gradient underline">Login</a></p>
+  </div>
+</body>
+</html>

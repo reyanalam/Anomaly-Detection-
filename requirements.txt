@@ -1,0 +1,11 @@
+datetime
+matplotlib
+numpy
+optuna
+pandas
+pickle-mixin
+pyod
+scikit-learn
+scipy
+seaborn
+django

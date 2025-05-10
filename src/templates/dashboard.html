@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard - Zenqor</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .text-gradient {
+      background: linear-gradient(to right, #A15BE4, #000EA3);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
+</head>
+<body class="bg-black text-white min-h-screen">
+  <header class="p-6 border-b border-white/10 flex justify-between items-center">
+    <h1 class="text-xl font-bold text-gradient">Zenqor Dashboard</h1>
+    <nav class="flex gap-4 text-sm">
+      <a href="#" class="hover:underline">Overview</a>
+      <a href="#" class="hover:underline">Projects</a>
+      <a href="#" class="hover:underline">Settings</a>
+      <a href="#" class="hover:underline">Logout</a>
+    </nav>
+  </header>
+  <main class="p-6 space-y-6">
+    <h2 class="text-2xl font-bold">Welcome, Quantum Explorer</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="p-6 rounded-xl bg-white/5 backdrop-blur-xl">
+        <h3 class="font-semibold mb-2">Current Models</h3>
+        <p class="text-white/70 text-sm">12 Quantum Neural Networks active</p>
+      </div>
+      <div class="p-6 rounded-xl bg-white/5 backdrop-blur-xl">
+        <h3 class="font-semibold mb-2">Data Processed</h3>
+        <p class="text-white/70 text-sm">~4.2 TB this month</p>
+      </div>
+      <div class="p-6 rounded-xl bg-white/5 backdrop-blur-xl">
+        <h3 class="font-semibold mb-2">Uptime</h3>
+        <p class="text-white/70 text-sm">99.98% system availability</p>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
